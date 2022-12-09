@@ -110,3 +110,27 @@ INSERT INTO `user_mst` (`id`, `username`, `password`) VALUES
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40111 SET SQL_NOTES=IFNULL(@OLD_SQL_NOTES, 1) */;
+
+UPDATE
+	student_mst SET score = 80 WHERE NAME = '박준현';
+	
+/*
+2학년인 학생 중에 80 ~ 90 사이인
+학생들의 점수를 100으로 바꿔라
+*/
+
+UPDATE
+	student_mst
+SET
+	score = 100
+WHERE
+	student_year = 2
+	and score BETWEEN 80 AND 90;
+	
+/*-----------------------------------------------------------------*/
+
+DELETE
+FROM
+	student_mst
+WHERE
+	score < 80;
